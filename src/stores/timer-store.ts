@@ -78,7 +78,7 @@ export const useTimer = create<TimerState>()(
       },
     }),
     {
-      name: "blitzit-timer",
+      name: "tempo-timer",
       storage: createJSONStorage(() => localStorage),
     }
   )

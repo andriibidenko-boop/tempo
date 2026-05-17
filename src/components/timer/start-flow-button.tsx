@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import { Play } from "lucide-react";
 import { useUI } from "@/stores/ui-store";
 import { useTasks } from "@/hooks/use-tasks";
 import { useTimer } from "@/stores/timer-store";
 
-export function BlitzNowButton() {
+export function StartFlowButton() {
   const { activeListId } = useUI();
   const tasks = useTasks(activeListId);
   const startTimer = useTimer((s) => s.start);
@@ -15,7 +15,7 @@ export function BlitzNowButton() {
   const firstOpen = tasks.find((t) => !t.completed);
   const disabled = !firstOpen || !!activeTaskId;
 
-  const onBlitz = () => {
+  const onStart = () => {
     if (!firstOpen) return;
     startTimer(
       firstOpen.id,
@@ -34,12 +34,12 @@ export function BlitzNowButton() {
       <motion.button
         whileHover={{ scale: disabled ? 1 : 1.05 }}
         whileTap={{ scale: disabled ? 1 : 0.96 }}
-        onClick={onBlitz}
+        onClick={onStart}
         disabled={disabled}
         className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 transition-shadow"
       >
-        <Zap className="w-5 h-5 fill-current" />
-        BLITZ NOW
+        <Play className="w-5 h-5 fill-current" />
+        START FLOW
       </motion.button>
     </motion.div>
   );

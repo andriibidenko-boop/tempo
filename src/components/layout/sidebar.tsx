@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Plus, Zap, BarChart3, Settings as SettingsIcon } from "lucide-react";
+import { Plus, Activity, BarChart3, Settings as SettingsIcon } from "lucide-react";
 import { useLists } from "@/hooks/use-lists";
 import { useUI } from "@/stores/ui-store";
 import { db } from "@/lib/db";
@@ -43,9 +43,9 @@ export function Sidebar() {
           transition={{ type: "spring", stiffness: 200 }}
           className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center"
         >
-          <Zap className="w-5 h-5 fill-current" />
+          <Activity className="w-5 h-5" strokeWidth={2.5} />
         </motion.div>
-        <h1 className="text-lg font-bold tracking-tight">Blitzit</h1>
+        <h1 className="text-lg font-bold tracking-tight">Tempo</h1>
       </div>
 
       <nav className="flex-1 overflow-y-auto px-2 py-2">

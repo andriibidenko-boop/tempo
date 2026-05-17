@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
 import { TaskList } from "@/components/task/task-list";
 import { TaskComposer } from "@/components/task/task-composer";
-import { BlitzNowButton } from "@/components/timer/blitz-now-button";
+import { StartFlowButton } from "@/components/timer/start-flow-button";
 import { FloatingTimer } from "@/components/timer/floating-timer";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
             <TaskList />
           </div>
         </div>
-        <BlitzNowButton />
+        <StartFlowButton />
       </main>
       <FloatingTimer />
     </div>

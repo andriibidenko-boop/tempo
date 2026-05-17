@@ -23,7 +23,7 @@ export const useUI = create<UIState>()(
       closeComposer: () => set({ isComposerOpen: false }),
     }),
     {
-      name: "blitzit-ui",
+      name: "tempo-ui",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         activeListId: state.activeListId,

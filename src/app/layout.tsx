@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Blitzit Web — To-Do, Pomodoro & Focus Timer",
+  title: "Tempo — To-Do, Pomodoro & Focus Timer",
   description:
-    "A focused to-do list and live timer that helps you Blitz through tasks. Free, local-first, web-based.",
+    "A focused to-do list with a live timer. Find your tempo, ship your day. Free, local-first, web.",
 };
 
 export default function RootLayout({

@@ -1,32 +1,55 @@
-# Blitzit Web
+# Tempo
 
-A free, local-first web clone of [Blitzit](https://www.blitzit.app/) — a focused to-do list with a live focus timer.
+> **Find your tempo. Ship your day.**
 
-> **v0.1** — MVP scaffolding. Data lives in your browser (IndexedDB). No accounts, no payments, no servers.
+A focused to-do list with a live timer that keeps you in flow. Tempo helps you decide what to do next, set a pace, and watch the day move.
 
-## ✨ Features (MVP)
+**Free. Local-first. No accounts, no payments, no servers.** Your data lives in your browser.
 
-- 📋 Task lists with quick-add composer
-- ✅ Tasks with completion, drag-to-reorder (coming), notes, time estimates
-- ⚡ **BLITZ NOW** button — launches your top task into a live timer
-- ⏱️ Three timer modes: Estimate countdown, Pomodoro, free Time-Tracking
-- 🪟 Floating timer panel (Document Picture-in-Picture, coming soon)
-- 🎉 Confetti celebrations on task completion
-- 🌓 Dark / Light theme
-- 💾 Local-first via IndexedDB (Dexie) — no servers, no sync, no fuss
+---
+
+## ✨ What Tempo does
+
+Tempo turns your day into a rhythm of focused intervals:
+
+1. **Plan** — drop tasks into a list, optionally estimate how long each will take.
+2. **Press Play** — `START FLOW` launches your top task into a live timer.
+3. **Stay in tempo** — a floating panel keeps your current task and time visible.
+4. **Ship** — finish, celebrate, repeat.
+
+### Timer modes
+
+- **Estimate countdown** — set a target, watch it tick down. Tempo records whether you finished early or late.
+- **Pomodoro** — focused intervals with auto-scheduled breaks (default 25/5).
+- **Free tracking** — count time up from zero when you don't know how long it'll take.
+
+### Other niceties
+
+- 🎉 Confetti when you complete a task
+- 🌓 Light & dark themes
+- 🪟 Floating timer panel (planned: Document Picture-in-Picture)
+- ⌨️ Keyboard-first (planned)
+- 📊 Reports — time per list, punctuality (planned)
+- 💾 Local-first via IndexedDB — your data, your browser, that's it
+
+---
 
 ## 🛠️ Stack
 
-- **Framework:** Next.js 16 (App Router) + React 19 + TypeScript
-- **Styling:** Tailwind CSS v4 + shadcn/ui
-- **Animations:** Framer Motion + canvas-confetti
-- **State:** Zustand (timer / UI)
-- **Storage:** Dexie.js (IndexedDB)
-- **Drag & Drop:** dnd-kit (planned)
-- **Charts:** Tremor (for Reports, planned)
-- **Hosting:** Vercel (planned)
+| Layer | Tool |
+|---|---|
+| Framework | Next.js 16 (App Router) + React 19 + TypeScript |
+| Styling | Tailwind CSS v4 + shadcn/ui |
+| Animation | Framer Motion, canvas-confetti |
+| State | Zustand (with `persist` to localStorage) |
+| Storage | Dexie.js → IndexedDB |
+| Drag & Drop | dnd-kit |
+| Charts | Tremor |
+| Hosting | Vercel |
 
-## 🚀 Getting started
+---
+
+## 🚀 Run locally
 
 ```bash
 pnpm install
@@ -35,32 +58,36 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+---
+
 ## 🗺️ Roadmap
 
-### v0.1 (current)
-- [x] Project scaffold + design system
-- [x] Lists, tasks, completion
-- [x] BLITZ NOW + floating timer panel
-- [x] EST / Pomodoro / Tracking modes
-- [x] Confetti micro-interactions
+### v0.1 — current
+- [x] Project scaffold and design system
+- [x] Lists, tasks, completion with confetti
+- [x] `START FLOW` button + floating timer panel
+- [x] Three timer modes (EST / Pomodoro / Tracking)
+- [x] Pause / Resume / Done / Stop
+- [x] Session persistence to IndexedDB
 
-### v0.2
-- [ ] Subtasks UI
-- [ ] Task notes editor
+### v0.2 — next
+- [ ] Subtasks UI + notes editor
 - [ ] Drag-and-drop reorder (dnd-kit)
 - [ ] Document Picture-in-Picture floating window
 - [ ] Web Notifications for timer events
-- [ ] Reports page (time by list, punctuality)
+- [ ] Reports page (Tremor)
 - [ ] Keyboard shortcuts
 - [ ] Theme toggle (next-themes)
 
 ### Later
-- [ ] Eisenhower Matrix
+- [ ] Eisenhower Matrix prioritization
 - [ ] Recurring tasks
-- [ ] Export / import data
-- [ ] PWA install + offline
+- [ ] Export / import JSON
+- [ ] PWA install + offline mode
 
-## 📁 Project structure
+---
+
+## 📁 Structure
 
 ```
 src/
@@ -68,7 +95,7 @@ src/
 ├── components/
 │   ├── ui/             # shadcn primitives
 │   ├── task/           # Task list, card, composer
-│   ├── timer/          # Floating timer, BLITZ NOW
+│   ├── timer/          # Floating timer, START FLOW
 │   └── layout/         # Sidebar, Topbar
 ├── hooks/              # useLists, useTasks, useTick
 ├── lib/
@@ -76,6 +103,8 @@ src/
 │   └── utils.ts        # cn() helper
 └── stores/             # Zustand stores
 ```
+
+---
 
 ## License
 

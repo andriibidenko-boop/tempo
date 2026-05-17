@@ -57,7 +57,7 @@ export interface Settings {
   enableSounds: boolean;
 }
 
-class BlitzitDB extends Dexie {
+class TempoDB extends Dexie {
   lists!: Table<List, string>;
   tasks!: Table<Task, string>;
   subtasks!: Table<Subtask, string>;
@@ -65,7 +65,7 @@ class BlitzitDB extends Dexie {
   settings!: Table<Settings, string>;
 
   constructor() {
-    super("blitzit");
+    super("tempo");
     this.version(1).stores({
       lists: "id, order, archived",
       tasks: "id, listId, completed, scheduledAt, order, [listId+completed]",
@@ -76,7 +76,7 @@ class BlitzitDB extends Dexie {
   }
 }
 
-export const db = new BlitzitDB();
+export const db = new TempoDB();
 
 export const DEFAULT_SETTINGS: Settings = {
   id: "singleton",
